@@ -1,0 +1,1 @@
+VS Code extension for running ManimGL scenes.
