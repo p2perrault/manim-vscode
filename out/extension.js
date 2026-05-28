@@ -179,6 +179,21 @@ function activate(context) {
         await new Promise(resolve => (0, timers_1.setTimeout)(resolve, delay));
         await sendTerminalCommand('Rendering', fullCommand, { enter: false });
     }));
+    context.subscriptions.push(vscode.commands.registerCommand('manim.copyReorient', async () => {
+        const tmpFile = 'C:\\\\Users\\\\pierrePER\\\\AppData\\\\Local\\\\Temp\\\\_manim_reorient.txt';
+        const cmd = `import numpy as np; _a = np.degrees(self.camera.frame.get_euler_angles()); _c = self.camera.frame.get_center(); _h = self.camera.frame.get_height(); open(r"${tmpFile}", "w").write(f"self.camera.frame.reorient({_a[0]:.1f}, {_a[1]:.1f}, {_a[2]:.1f}, ({_c[0]:.2f}, {_c[1]:.2f}, {_c[2]:.2f}), {_h:.1f})")`;
+        await sendTerminalCommand('Manim', cmd);
+        await new Promise(resolve => (0, timers_1.setTimeout)(resolve, 500));
+        const fs = require('fs');
+        try {
+            const result = fs.readFileSync('C:\\Users\\pierrePER\\AppData\\Local\\Temp\\_manim_reorient.txt', 'utf8');
+            await vscode.env.clipboard.writeText(result);
+            vscode.window.showInformationMessage(`Copied: ${result}`);
+        }
+        catch (e) {
+            vscode.window.showErrorMessage('Failed to read reorient output.');
+        }
+    }));
 }
 function deactivate() { }
 //# sourceMappingURL=extension.js.map

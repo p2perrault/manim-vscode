@@ -20,7 +20,8 @@
       { "command": "manim.skippedCheckpointPaste",  "title": "Manim: Skipped Checkpoint Paste" },
       { "command": "manim.reload",                  "title": "Manim: Reload" },
       { "command": "manim.render",                  "title": "Manim: Render" },
-      { "command": "manim.toggleIPython",           "title": "Manim: Toggle IPython Mode" }
+      { "command": "manim.toggleIPython",           "title": "Manim: Toggle IPython Mode" },
+      { "command": "manim.copyReorient",            "title": "Manim: Copy Reorient" }
     ],
     "keybindings": [
       { "command": "manim.runScene",                "key": "ctrl+shift+m", "when": "editorTextFocus" },
@@ -28,7 +29,8 @@
       { "command": "manim.checkpointPaste",         "key": "ctrl+p", "when": "editorTextFocus" },
       { "command": "manim.skippedCheckpointPaste",  "key": "alt+p",  "when": "editorTextFocus" },
       { "command": "manim.recordedCheckpointPaste", "key": "ctrl+alt+p", "when": "editorTextFocus" },
-      { "command": "manim.exit",                    "key": "ctrl+e", "when": "editorTextFocus" }
+      { "command": "manim.exit",                    "key": "ctrl+e", "when": "editorTextFocus" },
+      { "command": "manim.copyReorient",            "key": "alt+o"}
     ]
   },
   "scripts": {
