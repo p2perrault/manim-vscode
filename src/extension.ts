@@ -94,7 +94,7 @@ export function activate(context: vscode.ExtensionContext) {
 
     vscode.window.onDidOpenTerminal(terminal => {
         if (terminal.name === 'Manim') {
-            terminal.sendText('C:/venv/py310/Scripts/Activate.ps1');
+            terminal.sendText('C:/venv/py311/Scripts/Activate.ps1');
             terminal.sendText('cd C:/Users/pierrePER/AppData/Roaming/MobaXterm/home/p2perrault/enigmath/tools');
         }
     });
