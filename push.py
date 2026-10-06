@@ -11,7 +11,7 @@ if __name__ == "__main__":
     cmd = f'git config --global user.name "p2perrault" \
     && git config --global user.email "p2perrault@gmail.com" \
     && git init . \
-    && git branch -M main \
+    && git branch -M master \
     && git add . \
     && git commit -m "{args.message}" \
     && git push --force https://{token}@github.com/p2perrault/manim-vscode.git'
